@@ -1,0 +1,1766 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#"
+     xml:base="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:Award="https://dbpedia.org/ontology/Award#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:ontology="https://dbpedia.org/ontology/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2">
+        <owl:versionIRI rdf:resource="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2/1.2.0"/>
+        <rdfs:comment>The Queen&apos;s Gambit
+This ontology aims to show the relationships between the concepts found in the TV series &apos;The Queen&apos;s Gambit&apos;, based on the novel by Walter Tevis, in which a young prodigy in chess is winning tournaments and losing some, despite being an orphan and with drug and alcohol problems until she wins the best champion in the world..
+Corresponds to the PAC2 of the subject &apos;Representation of Knowledge&apos; at the Universitat Oberta de Catalunya
+
+Author: Onofre Vallespir Pons
+April 2022</rdfs:comment>
+        <rdfs:label>TVseries The Quen&apos;s Gambit</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#sameAs -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#sameAs"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#episodeHasTournament -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#episodeHasTournament">
+        <owl:inverseOf rdf:resource="https://dbpedia.org/ontology/Award#tournamentIsInEpisode"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/actor#Episode"/>
+        <rdfs:range rdf:resource="https://schema.org/actor#Tournament"/>
+        <rdfs:comment>A tournament can appears in an episode</rdfs:comment>
+        <rdfs:label>episodeHasTournement</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasAward -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasAward">
+        <owl:inverseOf rdf:resource="https://dbpedia.org/ontology/Award#isAwardOf"/>
+        <rdfs:domain rdf:resource="https://schema.org/actor#TVSeries"/>
+        <rdfs:range rdf:resource="https://schema.org/actor#Award"/>
+        <rdfs:comment>A Tvseries has one award in one date, may have several a year</rdfs:comment>
+        <rdfs:label>hasAward</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasDirector -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasDirector">
+        <owl:inverseOf rdf:resource="https://dbpedia.org/ontology/Award#isDirectorOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/actor#TVSeries"/>
+        <rdfs:range rdf:resource="https://schema.org/actor#Director"/>
+        <rdfs:comment>All films, creativeworks an TVseries has a main Director</rdfs:comment>
+        <rdfs:label>hasDirector</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasEpisode -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasEpisode">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#isInSeason"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/actor#Season"/>
+        <rdfs:range rdf:resource="https://schema.org/actor#Episode"/>
+        <rdfs:comment>A season of the TVseries is made up of episodes</rdfs:comment>
+        <rdfs:label>hasEpisode</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasGenre -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasGenre">
+        <owl:inverseOf rdf:resource="https://dbpedia.org/ontology/Award#isGenreIn"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/actor#TVSeries"/>
+        <rdfs:range rdf:resource="https://schema.org/actor#Genre"/>
+        <rdfs:comment>A TV series is about one or more genres of cinema</rdfs:comment>
+        <rdfs:label>hasGenre</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasSeason -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasSeason">
+        <owl:inverseOf rdf:resource="https://dbpedia.org/ontology/Award#isSeasonOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/actor#TVSeries"/>
+        <rdfs:range rdf:resource="https://schema.org/actor#Season"/>
+        <rdfs:comment>A TV series can be screened for one or more seasons.</rdfs:comment>
+        <rdfs:label>hasSeason</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasTVSeries -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasTVSeries">
+        <owl:inverseOf rdf:resource="https://dbpedia.org/ontology/Award#isTVSeriesOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/actor#Platform"/>
+        <rdfs:range rdf:resource="https://schema.org/actor#TVSeries"/>
+        <rdfs:comment>A platform broadcasts TVseries</rdfs:comment>
+        <rdfs:label>hasTVSeries</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#isInSeason -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#isInSeason">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/actor#Episode"/>
+        <rdfs:range rdf:resource="https://schema.org/actor#Season"/>
+        <rdfs:comment>An episode belongs to a season of the TV series</rdfs:comment>
+        <rdfs:label>isInSeason</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#broadcastsTVseries -->
+
+    <owl:ObjectProperty rdf:about="https://dbpedia.org/ontology/Award#broadcastsTVseries">
+        <owl:inverseOf rdf:resource="https://dbpedia.org/ontology/Award#isBroadcastBy"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/actor#Platform"/>
+        <rdfs:range rdf:resource="https://schema.org/actor#TVSeries"/>
+        <rdfs:comment>The platform /stream service  broadcasts the TVseries</rdfs:comment>
+        <rdfs:comment>broadcastsTVseries</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#cityHasTournament -->
+
+    <owl:ObjectProperty rdf:about="https://dbpedia.org/ontology/Award#cityHasTournament">
+        <owl:inverseOf rdf:resource="https://dbpedia.org/ontology/Award#tournamentIsInCity"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/actor#City"/>
+        <rdfs:range rdf:resource="https://schema.org/actor#Tournament"/>
+        <rdfs:comment>In this city a tournament is played</rdfs:comment>
+        <rdfs:label>cityHasTournement</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#cityIsIn -->
+
+    <owl:ObjectProperty rdf:about="https://dbpedia.org/ontology/Award#cityIsIn">
+        <owl:inverseOf rdf:resource="https://dbpedia.org/ontology/Award#hasCity"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/actor#City"/>
+        <rdfs:range rdf:resource="https://schema.org/actor#Country"/>
+        <rdfs:comment>A city is in a country</rdfs:comment>
+        <rdfs:label>cityIsIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#hasCharacter -->
+
+    <owl:ObjectProperty rdf:about="https://dbpedia.org/ontology/Award#hasCharacter">
+        <owl:inverseOf rdf:resource="https://dbpedia.org/ontology/Award#isPerformedBy"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/actor#Actor"/>
+        <rdfs:range rdf:resource="https://schema.org/actor#Character"/>
+        <rdfs:comment>An actor plays a character</rdfs:comment>
+        <rdfs:label>hasCharacter</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#hasCity -->
+
+    <owl:ObjectProperty rdf:about="https://dbpedia.org/ontology/Award#hasCity">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/actor#Country"/>
+        <rdfs:range rdf:resource="https://schema.org/actor#City"/>
+        <rdfs:comment>A country has a city</rdfs:comment>
+        <rdfs:label>hasCity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#isAwardOf -->
+
+    <owl:ObjectProperty rdf:about="https://dbpedia.org/ontology/Award#isAwardOf">
+        <rdfs:domain rdf:resource="https://schema.org/actor#Award"/>
+        <rdfs:range rdf:resource="https://schema.org/actor#TVSeries"/>
+        <rdfs:comment>An award is given to a tvseries or a participant</rdfs:comment>
+        <rdfs:label>isAwardOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#isBroadcastBy -->
+
+    <owl:ObjectProperty rdf:about="https://dbpedia.org/ontology/Award#isBroadcastBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/actor#TVSeries"/>
+        <rdfs:range rdf:resource="https://schema.org/actor#Platform"/>
+        <rdfs:comment>The tvseries is broadcast by the platform</rdfs:comment>
+        <rdfs:label>isBroadcastBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#isDirectorOf -->
+
+    <owl:ObjectProperty rdf:about="https://dbpedia.org/ontology/Award#isDirectorOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/actor#Director"/>
+        <rdfs:range rdf:resource="https://schema.org/actor#TVSeries"/>
+        <rdfs:comment>A Director  is from  a TVseries</rdfs:comment>
+        <rdfs:label>isDirectorOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#isGenreIn -->
+
+    <owl:ObjectProperty rdf:about="https://dbpedia.org/ontology/Award#isGenreIn">
+        <rdfs:domain rdf:resource="https://schema.org/actor#Genre"/>
+        <rdfs:range rdf:resource="https://schema.org/actor#TVSeries"/>
+        <rdfs:comment>A genre is treated in a tv series</rdfs:comment>
+        <rdfs:label>isGenreIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#isPerformedBy -->
+
+    <owl:ObjectProperty rdf:about="https://dbpedia.org/ontology/Award#isPerformedBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/actor#Character"/>
+        <rdfs:range rdf:resource="https://schema.org/actor#Actor"/>
+        <rdfs:comment>A role/Character in the TV series is played by an actor</rdfs:comment>
+        <rdfs:label>isPerformedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#isSeasonOf -->
+
+    <owl:ObjectProperty rdf:about="https://dbpedia.org/ontology/Award#isSeasonOf">
+        <rdfs:domain rdf:resource="https://schema.org/actor#Season"/>
+        <rdfs:range rdf:resource="https://schema.org/actor#TVSeries"/>
+        <rdfs:label>A season belongs to a TVseries</rdfs:label>
+        <rdfs:label>isSeasonOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#isTVSeriesOf -->
+
+    <owl:ObjectProperty rdf:about="https://dbpedia.org/ontology/Award#isTVSeriesOf">
+        <rdfs:domain rdf:resource="https://schema.org/actor#TVSeries"/>
+        <rdfs:range rdf:resource="https://schema.org/actor#Platform"/>
+        <rdfs:comment>A TVseries is issued by a platform</rdfs:comment>
+        <rdfs:label>isTVseriesOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#tournamentIsInCity -->
+
+    <owl:ObjectProperty rdf:about="https://dbpedia.org/ontology/Award#tournamentIsInCity">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/actor#Tournament"/>
+        <rdfs:range rdf:resource="https://schema.org/actor#City"/>
+        <rdfs:comment>A tournament is played in a city</rdfs:comment>
+        <rdfs:label>tournementIsInCity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#tournamentIsInEpisode -->
+
+    <owl:ObjectProperty rdf:about="https://dbpedia.org/ontology/Award#tournamentIsInEpisode">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/actor#Tournament"/>
+        <rdfs:range rdf:resource="https://schema.org/actor#Episode"/>
+        <rdfs:comment>tournament is in episode</rdfs:comment>
+        <rdfs:label>tournementIsInEpisode</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasAwardName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasAwardName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/actor#Award"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The title of the award won by the TVseries</rdfs:comment>
+        <rdfs:label>hasAwardName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasCharacterName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasCharacterName">
+        <rdfs:domain rdf:resource="https://schema.org/actor#Character"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The  name and litle definition of a character</rdfs:comment>
+        <rdfs:label>hasCharacterName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasCountryName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasCountryName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/actor#Country"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The country where the tournament is played</rdfs:comment>
+        <rdfs:label>hasCountryName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasEpisodeName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasEpisodeName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/actor#Episode"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The name or title of episode</rdfs:comment>
+        <rdfs:label>hasEpisodeName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasGenreName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasGenreName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/actor#Genre"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The name of the argument  type, where  the TVseries is classified</rdfs:comment>
+        <rdfs:label>hasGenreName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasPersonName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasPersonName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/actor#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Fullname of person</rdfs:comment>
+        <rdfs:label>hasPersonName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasPlatformName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasPlatformName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/actor#Platform"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Name of platform</rdfs:comment>
+        <rdfs:label>hasPlatformName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasSeasonName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasSeasonName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/actor#Season"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The season number</rdfs:comment>
+        <rdfs:label>hasSeasonName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasTVSeriesName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasTVSeriesName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/actor#TVSeries"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The name or title of the TVseries</rdfs:comment>
+        <rdfs:label>hasTVSeriesName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasTournamentName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasTournamentName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/actor#Tournament"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>tournament  showed in the episode</rdfs:comment>
+        <rdfs:label>hasTournementName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#numberEpisodes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#numberEpisodes">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/actor#Season"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</xsd:minInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">20</xsd:maxInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment>Number of episodes of the season.</rdfs:comment>
+        <rdfs:label>isGenreIn</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#hasAsFriend -->
+
+    <owl:DatatypeProperty rdf:about="https://dbpedia.org/ontology/Award#hasAsFriend">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/actor#Character"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The character has as friend the firrt character</rdfs:comment>
+        <rdfs:label>hasAsFriend</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#hasAwardReceptor -->
+
+    <owl:DatatypeProperty rdf:about="https://dbpedia.org/ontology/Award#hasAwardReceptor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/actor#Award"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The receptor of the award, it can be the TV series in global or by some specific section or a participating person</rdfs:comment>
+        <rdfs:label>hasAwardReceptor</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#hasAwardYear -->
+
+    <owl:DatatypeProperty rdf:about="https://dbpedia.org/ontology/Award#hasAwardYear">
+        <rdfs:domain rdf:resource="https://schema.org/actor#Award"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The award year in which it is received</rdfs:comment>
+        <rdfs:label>hasAwardYear</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#hasSexType -->
+
+    <owl:DatatypeProperty rdf:about="https://dbpedia.org/ontology/Award#hasSexType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://schema.org/actor#Character"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The sex of a character</rdfs:comment>
+        <rdfs:label>hasSexType</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#Awared -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Award#Awared">
+        <rdfs:subClassOf rdf:resource="https://schema.org/actor#Person"/>
+        <rdfs:comment>Class inserted by a rule from the movie awards. If it falls on a specific person (not the series itself) it is considered awarded.</rdfs:comment>
+        <rdfs:label>Awared</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#FirstCharacter -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Award#FirstCharacter">
+        <rdfs:subClassOf rdf:resource="https://schema.org/actor#Character"/>
+        <owl:disjointWith rdf:resource="https://schema.org/actor#GuestCharacter"/>
+        <owl:disjointWith rdf:resource="https://schema.org/actor#MainCharacter"/>
+        <owl:disjointWith rdf:resource="https://schema.org/actor#RecurringCharacter"/>
+        <rdfs:comment>The most important character en the TVseries.</rdfs:comment>
+        <rdfs:label>FirstCharacter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#NoPlayer -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Award#NoPlayer">
+        <rdfs:subClassOf rdf:resource="https://schema.org/actor#Character"/>
+        <owl:disjointWith rdf:resource="https://dbpedia.org/ontology/Award#Player"/>
+        <rdfs:comment>Class inserted by a rule from the (female) friends of the protagonist, which indicates that characters are not chess players</rdfs:comment>
+        <rdfs:label>NoPlayer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#Player -->
+
+    <owl:Class rdf:about="https://dbpedia.org/ontology/Award#Player">
+        <rdfs:subClassOf rdf:resource="https://schema.org/actor#Character"/>
+        <rdfs:comment>Class inserted by a rule from the friends (male) of the protagonist, which indicates which characters are chess players</rdfs:comment>
+        <rdfs:label>Player</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/actor#Actor -->
+
+    <owl:Class rdf:about="https://schema.org/actor#Actor">
+        <rdfs:subClassOf rdf:resource="https://schema.org/actor#Person"/>
+        <rdfs:comment>Person playing a role or character in an episode,</rdfs:comment>
+        <rdfs:label>Player</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/actor#Award -->
+
+    <owl:Class rdf:about="https://schema.org/actor#Award">
+        <rdfs:comment>An award given by an entity related to cinematography in recognition of the excellence of the participating professionals or of the series in general.</rdfs:comment>
+        <rdfs:label>Award</rdfs:label>
+        <rdfs:sameAs rdf:resource="https://dbpedia.org/ontology/Award"/>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/actor#Character -->
+
+    <owl:Class rdf:about="https://schema.org/actor#Character">
+        <rdfs:comment>Fictional person connected to a creative work, developed by an actor.</rdfs:comment>
+        <rdfs:label>Character</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/actor#Cinematographer -->
+
+    <owl:Class rdf:about="https://schema.org/actor#Cinematographer">
+        <rdfs:subClassOf rdf:resource="https://schema.org/actor#Person"/>
+        <rdfs:comment>Person who manages the visual part of the film and coordinates the photography team.</rdfs:comment>
+        <rdfs:label>Cinematographer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/actor#City -->
+
+    <owl:Class rdf:about="https://schema.org/actor#City">
+        <rdfs:comment>City in which the important part of the episode takes place, because there is an exhibition, tournament or important event</rdfs:comment>
+        <rdfs:label>City</rdfs:label>
+        <rdfs:sameAs rdf:resource="https://dbpedia.org/ontology/city"/>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/actor#Country -->
+
+    <owl:Class rdf:about="https://schema.org/actor#Country">
+        <rdfs:comment>Country where most of the scenes of the episode were filmed</rdfs:comment>
+        <rdfs:label>Country</rdfs:label>
+        <rdfs:sameAs rdf:resource="https://dbpedia.org/ontology/Country"/>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/actor#Director -->
+
+    <owl:Class rdf:about="https://schema.org/actor#Director">
+        <rdfs:subClassOf rdf:resource="https://schema.org/actor#Person"/>
+        <rdfs:comment>The person directing the filming of the TVserie</rdfs:comment>
+        <rdfs:label>Director</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/actor#Episode -->
+
+    <owl:Class rdf:about="https://schema.org/actor#Episode">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#episodeHasTournament"/>
+                <owl:allValuesFrom rdf:resource="https://schema.org/actor#Tournament"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A media episode is a  part of a season and   tells a small story that links to that of the previous episode, if not the first.</rdfs:comment>
+        <rdfs:label>Episode</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/actor#Genre -->
+
+    <owl:Class rdf:about="https://schema.org/actor#Genre">
+        <rdfs:comment>Argument type</rdfs:comment>
+        <rdfs:label>Genre</rdfs:label>
+        <rdfs:sameAs rdf:resource="https://dbpedia.org/ontology/genre"/>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/actor#GuestCharacter -->
+
+    <owl:Class rdf:about="https://schema.org/actor#GuestCharacter">
+        <rdfs:subClassOf rdf:resource="https://schema.org/actor#Character"/>
+        <owl:disjointWith rdf:resource="https://schema.org/actor#MainCharacter"/>
+        <owl:disjointWith rdf:resource="https://schema.org/actor#RecurringCharacter"/>
+        <rdfs:comment>Character who appear sporadically in an episode.</rdfs:comment>
+        <rdfs:label>GuestCharacter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/actor#MainCharacter -->
+
+    <owl:Class rdf:about="https://schema.org/actor#MainCharacter">
+        <rdfs:subClassOf rdf:resource="https://schema.org/actor#Character"/>
+        <owl:disjointWith rdf:resource="https://schema.org/actor#RecurringCharacter"/>
+        <rdfs:comment>Character(s) on which the importance of the plot of the series rests.</rdfs:comment>
+        <rdfs:label>MainCharacter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/actor#MusicComposer -->
+
+    <owl:Class rdf:about="https://schema.org/actor#MusicComposer">
+        <rdfs:subClassOf rdf:resource="https://schema.org/actor#Person"/>
+        <rdfs:comment>The person in charge of composing  the music of the TV serie</rdfs:comment>
+        <rdfs:label>MusicComposer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/actor#Person -->
+
+    <owl:Class rdf:about="https://schema.org/actor#Person">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://dbpedia.org/ontology/Award#hasCharacter"/>
+                <owl:someValuesFrom rdf:resource="https://schema.org/actor#Character"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A natural person playing in the film</rdfs:comment>
+        <rdfs:label>Person</rdfs:label>
+        <rdfs:sameAs rdf:resource="https://dbpedia.org/ontology/Person"/>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/actor#Platform -->
+
+    <owl:Class rdf:about="https://schema.org/actor#Platform">
+        <rdfs:comment>Streaming Service or Broadcast Channel.</rdfs:comment>
+        <rdfs:label>Platform</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/actor#Producer -->
+
+    <owl:Class rdf:about="https://schema.org/actor#Producer">
+        <rdfs:subClassOf rdf:resource="https://schema.org/actor#Person"/>
+        <rdfs:comment>Professionals in charge of leading the production of the TVserie</rdfs:comment>
+        <rdfs:label>Producer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/actor#RecurringCharacter -->
+
+    <owl:Class rdf:about="https://schema.org/actor#RecurringCharacter">
+        <rdfs:subClassOf rdf:resource="https://schema.org/actor#Character"/>
+        <rdfs:comment>They are the characters that usually appear repeatedly in all episodes.</rdfs:comment>
+        <rdfs:label>RecurringCharacter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/actor#ScreenWriter -->
+
+    <owl:Class rdf:about="https://schema.org/actor#ScreenWriter">
+        <rdfs:subClassOf rdf:resource="https://schema.org/actor#Person"/>
+        <rdfs:comment>The person in charge of writing the script of the TV serie</rdfs:comment>
+        <rdfs:label>ScreenWriter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/actor#Season -->
+
+    <owl:Class rdf:about="https://schema.org/actor#Season">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasEpisode"/>
+                <owl:someValuesFrom rdf:resource="https://schema.org/actor#Episode"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A media season, specifically a TV series, is composed of episodes, usually broadcast in their first time in consecutive weeks.</rdfs:comment>
+        <rdfs:label>Season</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/actor#TVSeries -->
+
+    <owl:Class rdf:about="https://schema.org/actor#TVSeries">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasDirector"/>
+                <owl:someValuesFrom rdf:resource="https://schema.org/actor#Director"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasGenre"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>The name of the TVseries boadcasts by a platform</rdfs:comment>
+        <rdfs:label>TVSeries</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/actor#Tournament -->
+
+    <owl:Class rdf:about="https://schema.org/actor#Tournament">
+        <rdfs:comment>Reference to the tournament  that occurs in some episode</rdfs:comment>
+        <rdfs:label>Tournament</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Beth -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Beth">
+        <rdf:type rdf:resource="https://dbpedia.org/ontology/Award#FirstCharacter"/>
+        <hasCharacterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Beth_Harmon</hasCharacterName>
+        <Award:hasSexType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Female</Award:hasSexType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Cinematographer1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Cinematographer1">
+        <rdf:type rdf:resource="https://schema.org/actor#Cinematographer"/>
+        <hasPersonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Steven_Meizler</hasPersonName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Deardorff -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Deardorff">
+        <rdf:type rdf:resource="https://schema.org/actor#MainCharacter"/>
+        <hasCharacterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Helen_Deardorff</hasCharacterName>
+        <Award:hasAsFriend rdf:datatype="http://www.w3.org/2001/XMLSchema#string">N</Award:hasAsFriend>
+        <Award:hasSexType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Female</Award:hasSexType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Director1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Director1">
+        <rdf:type rdf:resource="https://schema.org/actor#Director"/>
+        <hasPersonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Scott_Frank</hasPersonName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#France -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#France">
+        <rdf:type rdf:resource="https://schema.org/actor#Country"/>
+        <hasCountryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">France</hasCountryName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Ganz -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Ganz">
+        <rdf:type rdf:resource="https://schema.org/actor#GuestCharacter"/>
+        <hasCharacterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mr_Ganz</hasCharacterName>
+        <Award:hasAsFriend rdf:datatype="http://www.w3.org/2001/XMLSchema#string">N</Award:hasAsFriend>
+        <Award:hasSexType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Male</Award:hasSexType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Girev -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Girev">
+        <rdf:type rdf:resource="https://schema.org/actor#GuestCharacter"/>
+        <hasCharacterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Georgi_Girev</hasCharacterName>
+        <Award:hasAsFriend rdf:datatype="http://www.w3.org/2001/XMLSchema#string">N</Award:hasAsFriend>
+        <Award:hasSexType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Male</Award:hasSexType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Jolene -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Jolene">
+        <rdf:type rdf:resource="https://schema.org/actor#MainCharacter"/>
+        <hasCharacterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jolene</hasCharacterName>
+        <Award:hasAsFriend rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Y</Award:hasAsFriend>
+        <Award:hasSexType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Female</Award:hasSexType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Kentucky -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Kentucky">
+        <rdf:type rdf:resource="https://schema.org/actor#City"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#LasVegas -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#LasVegas">
+        <rdf:type rdf:resource="https://schema.org/actor#City"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Levertov -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Levertov">
+        <rdf:type rdf:resource="https://schema.org/actor#RecurringCharacter"/>
+        <hasCharacterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Arthur_Levertov</hasCharacterName>
+        <Award:hasAsFriend rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Y</Award:hasAsFriend>
+        <Award:hasSexType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Male</Award:hasSexType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Lonsdale -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Lonsdale">
+        <rdf:type rdf:resource="https://schema.org/actor#MainCharacter"/>
+        <hasCharacterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Miss_Lonsdale</hasCharacterName>
+        <Award:hasAsFriend rdf:datatype="http://www.w3.org/2001/XMLSchema#string">N</Award:hasAsFriend>
+        <Award:hasSexType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Female</Award:hasSexType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Mexico -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Mexico">
+        <rdf:type rdf:resource="https://schema.org/actor#Country"/>
+        <Award:hasCity rdf:resource="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#MexicoDF"/>
+        <hasCountryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mexico</hasCountryName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#MexicoDF -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#MexicoDF">
+        <rdf:type rdf:resource="https://schema.org/actor#City"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#MusicComposer1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#MusicComposer1">
+        <rdf:type rdf:resource="https://schema.org/actor#MusicComposer"/>
+        <hasPersonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carlos_Rafael_Rivera</hasPersonName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Netflix -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Netflix">
+        <rdf:type rdf:resource="https://schema.org/actor#Platform"/>
+        <hasTVSeries rdf:resource="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#the_queen&apos;s_gambit"/>
+        <hasPlatformName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Netflix</hasPlatformName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Producer1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Producer1">
+        <rdf:type rdf:resource="https://schema.org/actor#Producer"/>
+        <hasPersonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Marcus_Loges</hasPersonName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Producer2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Producer2">
+        <rdf:type rdf:resource="https://schema.org/actor#Producer"/>
+        <hasPersonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mick_Aniceto</hasPersonName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#ScreenWriter -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#ScreenWriter">
+        <rdf:type rdf:resource="https://schema.org/actor#ScreenWriter"/>
+        <hasPersonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Allan_Scott</hasPersonName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Shaibel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Shaibel">
+        <rdf:type rdf:resource="https://schema.org/actor#MainCharacter"/>
+        <hasCharacterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">William_Shaibel</hasCharacterName>
+        <Award:hasAsFriend rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Y</Award:hasAsFriend>
+        <Award:hasSexType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Male</Award:hasSexType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Tournament1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Tournament1">
+        <rdf:type rdf:resource="https://schema.org/actor#Tournament"/>
+        <hasTournamentName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kentucky_Open_Chess_1963</hasTournamentName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Tournament2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Tournament2">
+        <rdf:type rdf:resource="https://schema.org/actor#Tournament"/>
+        <hasTournamentName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The_Mexico_Invitational_Chess_1966</hasTournamentName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Tournament3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Tournament3">
+        <rdf:type rdf:resource="https://schema.org/actor#Tournament"/>
+        <hasTournamentName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Las_Vegas_Tournament_1966</hasTournamentName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Tournament4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Tournament4">
+        <rdf:type rdf:resource="https://schema.org/actor#Tournament"/>
+        <hasTournamentName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Paris_Tournament_1967</hasTournamentName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Tournament5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Tournament5">
+        <rdf:type rdf:resource="https://schema.org/actor#Tournament"/>
+        <hasTournamentName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tournament_of_chess_Champions_1968</hasTournamentName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#URSS -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#URSS">
+        <rdf:type rdf:resource="https://schema.org/actor#Country"/>
+        <hasCountryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">URSS</hasCountryName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#USA -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#USA">
+        <rdf:type rdf:resource="https://schema.org/actor#Country"/>
+        <Award:hasCity rdf:resource="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Kentucky"/>
+        <Award:hasCity rdf:resource="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#LasVegas"/>
+        <hasCountryName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">United_States</hasCountryName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Wexler -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Wexler">
+        <rdf:type rdf:resource="https://schema.org/actor#RecurringCharacter"/>
+        <hasCharacterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hilton_Wexler</hasCharacterName>
+        <Award:hasAsFriend rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Y</Award:hasAsFriend>
+        <Award:hasSexType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Male</Award:hasSexType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#anya -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#anya">
+        <rdf:type rdf:resource="https://schema.org/actor#Actor"/>
+        <Award:hasCharacter rdf:resource="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Beth"/>
+        <hasPersonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anya_Taylor-Joy</hasPersonName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#award4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#award4">
+        <rdf:type rdf:resource="https://schema.org/actor#Award"/>
+        <hasAwardName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Primetime_Emmy_Awards</hasAwardName>
+        <Award:hasAwardReceptor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Scott_Frank</Award:hasAwardReceptor>
+        <Award:hasAwardYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2021</Award:hasAwardYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#award5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#award5">
+        <rdf:type rdf:resource="https://schema.org/actor#Award"/>
+        <hasAwardName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Grammy_Awards</hasAwardName>
+        <Award:hasAwardReceptor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carlos_Rafael_Rivera</Award:hasAwardReceptor>
+        <Award:hasAwardYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2022</Award:hasAwardYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#award6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#award6">
+        <rdf:type rdf:resource="https://schema.org/actor#Award"/>
+        <hasAwardName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Golden_Globe_Awards</hasAwardName>
+        <Award:hasAwardReceptor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The_Queen&apos;s_Gambit</Award:hasAwardReceptor>
+        <Award:hasAwardYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2021</Award:hasAwardYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#bill -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#bill">
+        <rdf:type rdf:resource="https://schema.org/actor#Actor"/>
+        <Award:hasCharacter rdf:resource="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Shaibel"/>
+        <hasPersonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bill_Camp</hasPersonName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#christiane -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#christiane">
+        <rdf:type rdf:resource="https://schema.org/actor#Actor"/>
+        <Award:hasCharacter rdf:resource="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Deardorff"/>
+        <hasPersonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Christiane_Seidel</hasPersonName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#genre_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#genre_1">
+        <rdf:type rdf:resource="https://schema.org/actor#Genre"/>
+        <hasGenreName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Period_drama</hasGenreName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#jonjo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#jonjo">
+        <rdf:type rdf:resource="https://schema.org/actor#Actor"/>
+        <Award:hasCharacter rdf:resource="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Ganz"/>
+        <hasPersonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jonjo_O&apos;Neill</hasPersonName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#louis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#louis">
+        <rdf:type rdf:resource="https://schema.org/actor#Actor"/>
+        <Award:hasCharacter rdf:resource="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Girev"/>
+        <hasPersonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Louis_Ashbourne_Serkis</hasPersonName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#max -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#max">
+        <rdf:type rdf:resource="https://schema.org/actor#Actor"/>
+        <Award:hasCharacter rdf:resource="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Levertov"/>
+        <hasPersonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Max_Krause</hasPersonName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#moses -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#moses">
+        <rdf:type rdf:resource="https://schema.org/actor#Actor"/>
+        <Award:hasCharacter rdf:resource="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Jolene"/>
+        <hasPersonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Moses_Ingram</hasPersonName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#rebecca -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#rebecca">
+        <rdf:type rdf:resource="https://schema.org/actor#Actor"/>
+        <Award:hasCharacter rdf:resource="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Lonsdale"/>
+        <hasPersonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rebecca_Root</hasPersonName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#ryan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#ryan">
+        <rdf:type rdf:resource="https://schema.org/actor#Actor"/>
+        <Award:hasCharacter rdf:resource="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#Wexler"/>
+        <hasPersonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ryan_Wichert</hasPersonName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#s01episode01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#s01episode01">
+        <rdf:type rdf:resource="https://schema.org/actor#Episode"/>
+        <hasEpisodeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s01episode01</hasEpisodeName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#s01episode02 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#s01episode02">
+        <rdf:type rdf:resource="https://schema.org/actor#Episode"/>
+        <hasEpisodeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s01episode02</hasEpisodeName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#s01episode03 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#s01episode03">
+        <rdf:type rdf:resource="https://schema.org/actor#Episode"/>
+        <hasEpisodeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s01episode03</hasEpisodeName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#s01episode04 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#s01episode04">
+        <rdf:type rdf:resource="https://schema.org/actor#Episode"/>
+        <hasEpisodeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s01episode04</hasEpisodeName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#s01episode05 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#s01episode05">
+        <rdf:type rdf:resource="https://schema.org/actor#Episode"/>
+        <hasEpisodeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s01episode05</hasEpisodeName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#s01episode06 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#s01episode06">
+        <rdf:type rdf:resource="https://schema.org/actor#Episode"/>
+        <hasEpisodeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s01episode06</hasEpisodeName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#s01episode07 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#s01episode07">
+        <rdf:type rdf:resource="https://schema.org/actor#Episode"/>
+        <hasEpisodeName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s01episode07</hasEpisodeName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#season01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#season01">
+        <rdf:type rdf:resource="https://schema.org/actor#Season"/>
+        <hasEpisode rdf:resource="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#s01episode01"/>
+        <hasEpisode rdf:resource="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#s01episode02"/>
+        <hasEpisode rdf:resource="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#s01episode03"/>
+        <hasEpisode rdf:resource="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#s01episode04"/>
+        <hasEpisode rdf:resource="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#s01episode05"/>
+        <hasEpisode rdf:resource="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#s01episode06"/>
+        <hasEpisode rdf:resource="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#s01episode07"/>
+        <hasSeasonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">season01</hasSeasonName>
+        <numberEpisodes rdf:datatype="http://www.w3.org/2001/XMLSchema#short">7</numberEpisodes>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#the_queen&apos;s_gambit -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#the_queen&apos;s_gambit">
+        <rdf:type rdf:resource="https://schema.org/actor#TVSeries"/>
+        <hasSeason rdf:resource="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#season01"/>
+        <hasTVSeriesName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">the_queen&apos;s_gambit</hasTVSeriesName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#Beltik -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Award#Beltik">
+        <rdf:type rdf:resource="https://schema.org/actor#MainCharacter"/>
+        <hasCharacterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Harry_Beltik</hasCharacterName>
+        <Award:hasAsFriend rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Y</Award:hasAsFriend>
+        <Award:hasSexType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Male</Award:hasSexType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#Borgov -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Award#Borgov">
+        <rdf:type rdf:resource="https://schema.org/actor#MainCharacter"/>
+        <hasCharacterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vasily_Borgov</hasCharacterName>
+        <Award:hasAsFriend rdf:datatype="http://www.w3.org/2001/XMLSchema#string">N</Award:hasAsFriend>
+        <Award:hasSexType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Male</Award:hasSexType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#Cleo -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Award#Cleo">
+        <rdf:type rdf:resource="https://schema.org/actor#GuestCharacter"/>
+        <hasCharacterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cleo</hasCharacterName>
+        <Award:hasAsFriend rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Y</Award:hasAsFriend>
+        <Award:hasSexType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Female</Award:hasSexType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#Moscow -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Award#Moscow">
+        <rdf:type rdf:resource="https://schema.org/actor#City"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#Paris -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Award#Paris">
+        <rdf:type rdf:resource="https://schema.org/actor#City"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#Townes -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Award#Townes">
+        <rdf:type rdf:resource="https://schema.org/actor#MainCharacter"/>
+        <hasCharacterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Townes</hasCharacterName>
+        <Award:hasAsFriend rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Y</Award:hasAsFriend>
+        <Award:hasSexType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Male</Award:hasSexType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#Watts -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Award#Watts">
+        <rdf:type rdf:resource="https://schema.org/actor#MainCharacter"/>
+        <hasCharacterName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Benny_Watts</hasCharacterName>
+        <Award:hasAsFriend rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Y</Award:hasAsFriend>
+        <Award:hasSexType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Male</Award:hasSexType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#award1 -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Award#award1">
+        <rdf:type rdf:resource="https://schema.org/actor#Award"/>
+        <hasAwardName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IGN_Awards-Best Drama_TV_Series_of_the_Year</hasAwardName>
+        <Award:hasAwardReceptor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The_Queen&apos;s_Gambit</Award:hasAwardReceptor>
+        <Award:hasAwardYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2021</Award:hasAwardYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#award2 -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Award#award2">
+        <rdf:type rdf:resource="https://schema.org/actor#Award"/>
+        <hasAwardName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hollywood_Music_in_Media_Awards-Best_Original_Score_in_a_TV_Show/Limited_Series</hasAwardName>
+        <Award:hasAwardReceptor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carlos_Rafael_Rivera</Award:hasAwardReceptor>
+        <Award:hasAwardYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2021</Award:hasAwardYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#award3 -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Award#award3">
+        <rdf:type rdf:resource="https://schema.org/actor#Award"/>
+        <hasAwardName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Golden_Globe_Awards</hasAwardName>
+        <Award:hasAwardReceptor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anya_Taylor-Joy</Award:hasAwardReceptor>
+        <Award:hasAwardYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2021</Award:hasAwardYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#harry -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Award#harry">
+        <rdf:type rdf:resource="https://schema.org/actor#Actor"/>
+        <Award:hasCharacter rdf:resource="https://dbpedia.org/ontology/Award#Beltik"/>
+        <hasPersonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Harry_Melling</hasPersonName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#jacob -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Award#jacob">
+        <rdf:type rdf:resource="https://schema.org/actor#Actor"/>
+        <Award:hasCharacter rdf:resource="https://dbpedia.org/ontology/Award#Townes"/>
+        <hasPersonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jacob_Fortune-Lloyd</hasPersonName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#marcin -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Award#marcin">
+        <rdf:type rdf:resource="https://schema.org/actor#Actor"/>
+        <Award:hasCharacter rdf:resource="https://dbpedia.org/ontology/Award#Borgov"/>
+        <hasPersonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Marcin_Dorocinski</hasPersonName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#millie -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Award#millie">
+        <rdf:type rdf:resource="https://schema.org/actor#Actor"/>
+        <Award:hasCharacter rdf:resource="https://dbpedia.org/ontology/Award#Cleo"/>
+        <hasPersonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Millie_Brandy</hasPersonName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dbpedia.org/ontology/Award#thomas -->
+
+    <owl:NamedIndividual rdf:about="https://dbpedia.org/ontology/Award#thomas">
+        <rdf:type rdf:resource="https://schema.org/actor#Actor"/>
+        <Award:hasCharacter rdf:resource="https://dbpedia.org/ontology/Award#Watts"/>
+        <hasPersonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thomas_Brodie-Sangster</hasPersonName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://schema.org/actor#Award"/>
+            <rdf:Description rdf:about="https://schema.org/actor#Character"/>
+            <rdf:Description rdf:about="https://schema.org/actor#City"/>
+            <rdf:Description rdf:about="https://schema.org/actor#Country"/>
+            <rdf:Description rdf:about="https://schema.org/actor#Episode"/>
+            <rdf:Description rdf:about="https://schema.org/actor#Genre"/>
+            <rdf:Description rdf:about="https://schema.org/actor#Person"/>
+            <rdf:Description rdf:about="https://schema.org/actor#Platform"/>
+            <rdf:Description rdf:about="https://schema.org/actor#Season"/>
+            <rdf:Description rdf:about="https://schema.org/actor#TVSeries"/>
+            <rdf:Description rdf:about="https://schema.org/actor#Tournament"/>
+        </owl:members>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="urn:swrl:var#c">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#a">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#j">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#f">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#s">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:label></rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://schema.org/actor#Person"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#c"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://schema.org/actor#Award"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#a"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/onofre/ontologies/TheQueensGambitv1.2#hasPersonName"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#c"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#j"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="https://dbpedia.org/ontology/Award#hasAwardReceptor"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl:var#a"/>
+                                                <swrl:argument2 rdf:resource="urn:swrl:var#j"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://dbpedia.org/ontology/Award#Awared"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#c"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled></swrla:isRuleEnabled>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://schema.org/actor#Character"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#c"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://dbpedia.org/ontology/Award#hasAsFriend"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#c"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#f"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#equal"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="urn:swrl:var#f"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first>Y</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="https://dbpedia.org/ontology/Award#hasSexType"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl:var#c"/>
+                                                <swrl:argument2 rdf:resource="urn:swrl:var#s"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#equal"/>
+                                                        <swrl:arguments>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first rdf:resource="urn:swrl:var#s"/>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first>Male</rdf:first>
+                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </swrl:arguments>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://dbpedia.org/ontology/Award#Player"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#c"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled></swrla:isRuleEnabled>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://schema.org/actor#Character"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#c"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://dbpedia.org/ontology/Award#hasSexType"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#c"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#s"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#equal"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="urn:swrl:var#s"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first>Female</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://dbpedia.org/ontology/Award#NoPlayer"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#c"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
